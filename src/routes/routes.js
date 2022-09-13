@@ -1,7 +1,6 @@
+const { index } = require('../api/controllers/usersController')
 const router = require('express').Router()
 
-router.get('/', (req, res) => {
-  res.send('Hello World')
-})
+router.get('/', index)
 
 module.exports = router
