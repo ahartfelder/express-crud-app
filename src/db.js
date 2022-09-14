@@ -1,14 +1,13 @@
 const { Sequelize } = require('sequelize')
-require('dotenv').config()
-const { DB_DATA, DB_USER, DB_PASS, DB_HOST, DB_DIAL } = process.env
+const { userDB, dataDB, passDB, hostDB, dialDB } = require('./config')
 
 const sequelize = new Sequelize(
-  DB_DATA,
-  DB_USER,
-  DB_PASS,
+  dataDB,
+  userDB,
+  passDB,
   {
-    host: DB_HOST,
-    dialect: DB_DIAL
+    host: hostDB,
+    dialect: dialDB
   }
 )
 
