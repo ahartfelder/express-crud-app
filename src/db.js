@@ -11,16 +11,7 @@ const sequelize = new Sequelize(
   }
 )
 
-const run = async () => {
-  try {
-    await sequelize.authenticate()
-    console.log('Connected successfully to MySQL DB')
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-run()
+sequelize.sync().then(() => console.log(`Connected to ${dataDB} database`))
 
 module.exports = {
   Sequelize,
